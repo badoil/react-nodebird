@@ -40,6 +40,10 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.get('/', (req, res) => {
+    req.send('server is running on deployment!!');
+})
+
 app.use('/api/user', userAPIRouter);
 app.use('/api/post', postAPIRouter);
 app.use('/api/posts', postsAPIRouter);
